@@ -23,7 +23,6 @@ import {
 import { ClientSideSuspense, useThreads } from "@liveblocks/react";
 import DraggableBlockPlugin from "../plugins/draggable-block";
 import { PreserveSelectionPlugin } from "../plugins/preserve-selection";
-import { DocumentName } from "./doc-name";
 import { FloatingToolbar } from "./floating-toolbar";
 
 const initialConfig = liveblocksConfig({
@@ -96,7 +95,7 @@ export function Editor() {
                           <div className="m-8 bg-gray-200/40 animate-pulse h-11 rounded-lg w-[400px] max-w-full" />
                         }
                       >
-                        <DocumentName />
+                        The Last Page
                       </ClientSideSuspense>
                     </h1>
                   </header>

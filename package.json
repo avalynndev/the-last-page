@@ -9,23 +9,21 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "lexical": "0.24.0",
-    "@lexical/react": "0.24.0",
     "@lexical/code": "0.24.0",
     "@lexical/link": "0.24.0",
     "@lexical/list": "0.24.0",
     "@lexical/markdown": "0.24.0",
+    "@lexical/react": "0.24.0",
     "@lexical/rich-text": "0.24.0",
-    "@liveblocks/react-lexical": "^3.9.1",
     "@liveblocks/node-lexical": "^3.9.1",
     "@liveblocks/react": "^3.9.1",
+    "@liveblocks/react-lexical": "^3.9.1",
+    "lexical": "0.24.0",
     "lucide-react": "^0.548.0",
     "motion": "^12.23.24",
     "next": "16.0.1",
     "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "react-textarea-autosize": "^8.5.9",
-    "swr": "^2.3.6"
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
     "typescript": "^5",
