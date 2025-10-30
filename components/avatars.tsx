@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useOthers, useSelf } from "@liveblocks/react/suspense";
 import { ClientSideSuspense } from "@liveblocks/react";
 
@@ -37,11 +38,9 @@ function AvatarStack() {
       )}
 
       <div className="flex">
-        {users.map(({ connectionId, info }) => {
-          return (
-            <Avatar key={connectionId} src={info.avatar} name={info.name} />
-          );
-        })}
+        {users.map(({ connectionId, info }) => (
+          <Avatar key={connectionId} src={info.avatar} name={info.name} />
+        ))}
       </div>
 
       <div className="ml-2 text-gray-500 text-sm select-none">
@@ -55,17 +54,18 @@ export function Avatar({ src, name }: { src: string; name: string }) {
   return (
     <div
       style={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
-      className="group -ml-2 flex shrink-0 place-content-center relative border-4 border-white rounded-full bg-gray-400"
+      className="group -ml-2 flex shrink-0 place-content-center relative border-4 border-white rounded-full bg-gray-400 overflow-hidden"
       data-tooltip={name}
     >
       <div className="opacity-0 group-hover:opacity-100 absolute top-full py-1 px-2 text-white text-xs rounded-lg mt-2.5 z-10 bg-black whitespace-nowrap transition-opacity">
         {name}
       </div>
-      <img
-        alt={name}
+      <Image
         src={src}
-        className="w-full h-full rounded-full"
-        data-tooltip={name}
+        alt={name}
+        width={AVATAR_SIZE}
+        height={AVATAR_SIZE}
+        className="rounded-full object-cover"
       />
     </div>
   );
@@ -75,7 +75,7 @@ export function AvatarPlaceholder() {
   return (
     <div
       style={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
-      className="group -ml-2 flex shrink-0 place-content-center relative border-4 border-white rounded-full bg-gray-400"
+      className="group -ml-2 flex shrink-0 place-content-center relative border-4 border-white rounded-full bg-gray-400 overflow-hidden"
     >
       <div className="w-full h-full rounded-full bg-neutral-200" />
     </div>

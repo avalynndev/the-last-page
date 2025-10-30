@@ -41,16 +41,19 @@ export function DocumentName() {
     return () => clearTimeout(timeoutRef.current);
   }, []);
 
-  const handleKeyDown = useCallback((e: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      return;
-    }
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLTextAreaElement>) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        return;
+      }
 
-    if (e.key === "ArrowDown") {
-      setTimeout(() => editor._rootElement?.focus());
-    }
-  }, []);
+      if (e.key === "ArrowDown") {
+        setTimeout(() => editor._rootElement?.focus());
+      }
+    },
+    [editor]
+  );
 
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   useUpArrowAtTopListener(() => {
@@ -92,5 +95,5 @@ function useUpArrowAtTopListener(callback: () => void) {
       },
       COMMAND_PRIORITY_NORMAL
     );
-  }, [editor]);
+  }, [editor, callback]);
 }

@@ -65,9 +65,7 @@ export function Editor() {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <div
-        className="*:first:z-10 contents"
-      >
+      <div className="*:first:z-10 contents">
         <LiveblocksPlugin>
           <div className="relative flex flex-row justify-between h-[calc(100%-60px)] w-full flex-1">
             <div className="relative h-full w-full overflow-y-auto overflow-x-hidden">
@@ -116,7 +114,7 @@ export function Editor() {
                         placeholder={
                           <span className="pointer-events-none absolute top-7 mt-px left-8 text-muted-foreground w-full h-full">
                             Try mentioning a user with @
-                            <br/>
+                            <br />
                             Select text to add formating.
                           </span>
                         }

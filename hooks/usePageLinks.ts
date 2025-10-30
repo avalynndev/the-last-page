@@ -3,9 +3,9 @@ import { getRoomsAndInfo } from "../actions/liveblocks";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
-const PAGE_LOAD_COUNT = 10; 
-const INITIAL_PAGE_MULTIPLIER = 1; 
-const REFRESH_TIME_MS = 10_000; 
+const PAGE_LOAD_COUNT = 10;
+const INITIAL_PAGE_MULTIPLIER = 1;
+const REFRESH_TIME_MS = 10_000;
 
 const NO_CURSOR = Symbol();
 
@@ -15,7 +15,7 @@ export function usePageLinks() {
   const result = useSWRInfinite(
     (pageIndex, previousPageData) => {
       if (pageIndex === 0 || !previousPageData) {
-        return NO_CURSOR; 
+        return NO_CURSOR;
       }
 
       if (!previousPageData.nextCursor) {

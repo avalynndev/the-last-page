@@ -53,7 +53,8 @@ export function FloatingToolbar() {
 
   useEffect(() => {
     if (range === null) {
-      setFullWidth(false);
+      const id = setTimeout(() => setFullWidth(false), 0);
+      return () => clearTimeout(id);
     }
   }, [range]);
 
@@ -104,7 +105,7 @@ export function FloatingToolbar() {
   );
 }
 
-function ToolbarOptions({}: {}) {
+function ToolbarOptions() {
   const [state, setState] = useState<"default" | "closed">("default");
 
   if (state === "closed") {

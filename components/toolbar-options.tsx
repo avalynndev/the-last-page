@@ -52,7 +52,7 @@ export function FloatingToolbarOptions({
       }
 
       if (type.startsWith("h")) {
-        return $setBlocksType(selection, () => $createHeadingNode(type as any));
+        return $setBlocksType(selection, () => $createHeadingNode());
       }
 
       if (type === "quote") {

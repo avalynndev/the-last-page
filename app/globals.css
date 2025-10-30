@@ -1,8 +1,8 @@
-@import '@liveblocks/react-ui/styles.css' layer(base);
-@import '@liveblocks/react-lexical/styles.css' layer(base);
-@import './cmdk.css' layer(base);
+@import "@liveblocks/react-ui/styles.css" layer(base);
+@import "@liveblocks/react-lexical/styles.css" layer(base);
+@import "./cmdk.css" layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --color-border: hsl(var(--border));
@@ -42,7 +42,6 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-
   *,
   ::after,
   ::before,
@@ -211,7 +210,9 @@ select {
 
 .lb-root {
   --lb-accent: #4f46e5;
-  --lb-elevation-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+  --lb-elevation-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
 }
 
 .lb-thread .lb-thread-composer {
