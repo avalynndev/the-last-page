@@ -34,15 +34,15 @@ const AVATAR_SIZE = 36;
 function AvatarStack() {
   const users = useOthers();
   const self = useSelf();
-   const username =
-     typeof window !== "undefined" ? localStorage.getItem("username") : null;
-   const avatar =
-     typeof window !== "undefined" ? localStorage.getItem("avatar") : null;
+  const username =
+    typeof window !== "undefined" ? localStorage.getItem("username") : null;
+  const avatar =
+    typeof window !== "undefined" ? localStorage.getItem("avatar") : null;
 
-   if (self && username) {
-     self.info.name = username;
-     if (avatar) self.info.avatar = avatar;
-   }
+  if (self && username) {
+    self.info.name = username;
+    if (avatar) self.info.avatar = avatar;
+  }
 
   return (
     <TooltipProvider>
