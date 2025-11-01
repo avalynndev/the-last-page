@@ -24,6 +24,12 @@ import { ClientSideSuspense, useThreads } from "@liveblocks/react";
 import DraggableBlockPlugin from "../plugins/draggable-block";
 import { PreserveSelectionPlugin } from "../plugins/preserve-selection";
 import { FloatingToolbar } from "./floating-toolbar";
+import { Indie_Flower } from "next/font/google";
+
+const indieFlower = Indie_Flower({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const initialConfig = liveblocksConfig({
   namespace: "Demo",
@@ -66,7 +72,7 @@ export function Editor() {
     <LexicalComposer initialConfig={initialConfig}>
       <div className="*:first:z-10 contents">
         <LiveblocksPlugin>
-          <div className="relative flex flex-row justify-between h-[calc(100%-60px)] w-full flex-1">
+          <div className="relative flex flex-row justify-between h-[calc(100%-60px)] w-full flex-1 dark:bg-[#111111] bg-[#f9f9f9]">
             <div className="relative h-full w-full overflow-y-auto overflow-x-hidden">
               <FloatingComposer className="w-[350px]" />
 
@@ -89,7 +95,7 @@ export function Editor() {
                   </div>
 
                   <header className="mt-20 mb-0">
-                    <h1 className="mb-0">
+                    <h1 className={`mb-0 font-extrabold ${indieFlower.className}`}>
                       <ClientSideSuspense
                         fallback={
                           <div className="m-8 bg-gray-200/40 animate-pulse h-11 rounded-lg w-[400px] max-w-full" />

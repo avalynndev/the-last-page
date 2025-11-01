@@ -18,7 +18,7 @@ export function Avatars() {
           <div className="relative ml-2">
             <AvatarPlaceholder />
           </div>
-          <div className="ml-2 text-gray-500 text-sm select-none">
+          <div className="ml-2 text-foreground text-sm select-none">
             1 user editing
           </div>
         </div>
@@ -59,7 +59,7 @@ function AvatarStack() {
           ))}
         </div>
 
-        <div className="ml-2 text-gray-500 text-sm select-none">
+        <div className="ml-2 text-foreground text-sm select-none">
           {users.length + 1} user{users.length ? "s" : ""} editing
         </div>
       </div>
@@ -73,7 +73,7 @@ export function Avatar({ src, name }: { src: string; name: string }) {
       <TooltipTrigger asChild>
         <div
           style={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
-          className="-ml-2 flex shrink-0 place-content-center relative border-4 border-white rounded-full bg-gray-400 overflow-hidden cursor-pointer"
+          className="-ml-2 flex shrink-0 place-content-center relative border-2 border-white rounded-full bg-gray-400  overflow-hidden cursor-pointer"
         >
           <Image
             src={src}
@@ -95,7 +95,7 @@ export function AvatarPlaceholder() {
   return (
     <div
       style={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
-      className="-ml-2 flex shrink-0 place-content-center relative border-4 border-white rounded-full bg-gray-400 overflow-hidden"
+      className="-ml-2 flex shrink-0 place-content-center relative border-2 border-white rounded-full overflow-hidden"
     >
       <div className="w-full h-full rounded-full bg-neutral-200" />
     </div>

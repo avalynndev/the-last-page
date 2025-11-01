@@ -67,7 +67,7 @@ export function FloatingToolbarOptions({
       layoutId="floating-toolbar-main"
       layout="size"
       style={{ display: "block" }}
-      className="p-1 rounded-lg border shadow-lg border-border/80 bg-card pointer-events-auto origin-top text-gray-600"
+      className="p-1 rounded-lg border shadow-lg border-border/80 bg-card pointer-events-auto origin-top text-foreground"
       initial={{ x: 0, y: 0, opacity: 0, scale: 0.93 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", duration: 0.25 }}
@@ -80,7 +80,7 @@ export function FloatingToolbarOptions({
             onInput={(e) =>
               editor.update(() => toggleBlock(e.currentTarget.value))
             }
-            className="bg-white border-0 h-8 pl-2 rounded-md transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring hover:bg-accent hover:text-accent-foreground data-active:bg-accent"
+            className="dark:bg-[#111111] bg-[#f9f9f9] border-0 h-8 pl-2 rounded-md transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring hover:bg-accent hover:text-accent-foreground data-active:bg-accent"
             value={activeBlock || "paragraph"}
           >
             {DROPDOWN_OPTIONS.map(({ id, text }) => (

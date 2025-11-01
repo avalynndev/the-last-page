@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 import { Providers } from "@/components/providers";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,21 +21,28 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="text-base relative h-screen max-h-screen bg-background/95 text-foreground">
-          <Suspense>
-            <Providers>
-              <div className="flex h-full max-h-full">
-                <div className="relative flex flex-col h-full w-full">
-                  {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="text-base relative h-screen max-h-screen">
+            <Suspense>
+              <Providers>
+                <div className="flex h-full max-h-full">
+                  <div className="relative flex flex-col h-full w-full">
+                    {children}
+                  </div>
                 </div>
-              </div>
-            </Providers>
-          </Suspense>
-        </main>
+              </Providers>
+            </Suspense>
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
