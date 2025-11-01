@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    console.log(room)
+    console.log(room);
 
     const session = liveblocks.prepareSession(user.name, {
       userInfo: {
