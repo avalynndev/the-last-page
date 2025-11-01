@@ -101,7 +101,9 @@ export function Editor() {
                   </header>
 
                   {!ready ? (
-                    <div className="mx-8 mt-4 bg-gray-200/40 animate-pulse w-full h-32 rounded-lg" />
+                    <div className="flex justify-center">
+                      <div className="mx-4 sm:mx-8 mt-4 bg-gray-200/40 animate-pulse w-full h-24 sm:h-32 rounded-lg" />
+                    </div>
                   ) : (
                     <section className="relative">
                       <RichTextPlugin
@@ -111,10 +113,10 @@ export function Editor() {
                           </div>
                         }
                         placeholder={
-                          <span className="pointer-events-none absolute top-7 mt-px left-8 text-muted-foreground w-full h-full">
-                            Try mentioning a user with @
-                            <br />
-                            Select text to add formating.
+                          <span className="pointer-events-none absolute top-7 left-8 mt-px text-sm text-muted-foreground w-full h-full italic leading-snug">
+                            Try mentioning a user with{" "}
+                            <span className="font-semibold">@</span>, select
+                            text to add formatting.
                           </span>
                         }
                         ErrorBoundary={LexicalErrorBoundary}

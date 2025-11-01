@@ -1,6 +1,5 @@
 import { Liveblocks } from "@liveblocks/node";
 import { NextRequest } from "next/server";
-import { getSession } from "@/example";
 
 const liveblocks = new Liveblocks({
   secret: process.env.LIVEBLOCKS_SECRET_KEY as string,
@@ -9,14 +8,31 @@ const liveblocks = new Liveblocks({
 export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest) {
-  const user = await getSession(request);
+  try {
+    const { user, room } = await request.json();
 
-  const session = liveblocks.prepareSession(`${user.id}`, {
-    userInfo: user.info,
-  });
+    if (!user?.name || !user?.avatar) {
+      return new Response(JSON.stringify({ error: "User not authenticated" }), {
+        status: 400,
+      });
+    }
 
-  session.allow(`liveblocks:examples:*`, session.FULL_ACCESS);
+    const session = liveblocks.prepareSession(user.name, {
+      userInfo: {
+        name: user.name,
+        avatar: user.avatar,
+        color: "#000000",
+      },
+    });
 
-  const { body, status } = await session.authorize();
-  return new Response(body, { status });
+    session.allow(`liveblocks:examples:*`, session.FULL_ACCESS);
+
+    const { body, status } = await session.authorize();
+    return new Response(body, { status });
+  } catch (err: any) {
+    console.error(err);
+    return new Response(JSON.stringify({ error: err.message }), {
+      status: 500,
+    });
+  }
 }
