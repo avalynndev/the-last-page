@@ -114,9 +114,7 @@ export function Editor() {
                         }
                         placeholder={
                           <span className="pointer-events-none absolute top-7 left-8 mt-px text-sm text-muted-foreground w-full h-full italic leading-snug">
-                            Try mentioning a user with{" "}
-                            <span className="font-semibold">@</span>, select
-                            text to add formatting.
+                            Start typing?
                           </span>
                         }
                         ErrorBoundary={LexicalErrorBoundary}
