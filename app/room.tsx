@@ -16,7 +16,6 @@ export function Room({ children }: { children: ReactNode }) {
 
   return (
     <RoomProvider
-    cl
       id={roomId}
       initialPresence={{
         cursor: null,

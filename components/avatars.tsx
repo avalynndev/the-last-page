@@ -19,7 +19,7 @@ export function Avatars() {
             <AvatarPlaceholder />
           </div>
           <div className="ml-2 text-foreground text-sm select-none">
-            1 user editing
+            .. user editing
           </div>
         </div>
       }

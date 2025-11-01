@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  //options here
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "liveblocks.io" }],
+  },
 };
 
 export default nextConfig;

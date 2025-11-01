@@ -95,7 +95,9 @@ export function Editor() {
                   </div>
 
                   <header className="mt-20 mb-0">
-                    <h1 className={`mb-0 font-extrabold ${indieFlower.className}`}>
+                    <h1
+                      className={`mb-0 font-extrabold ${indieFlower.className}`}
+                    >
                       <ClientSideSuspense
                         fallback={
                           <div className="m-8 bg-gray-200/40 animate-pulse h-11 rounded-lg w-[400px] max-w-full" />
