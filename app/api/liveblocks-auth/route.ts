@@ -17,6 +17,8 @@ export async function POST(request: NextRequest) {
       });
     }
 
+    console.log(room)
+
     const session = liveblocks.prepareSession(user.name, {
       userInfo: {
         name: user.name,
@@ -29,9 +31,9 @@ export async function POST(request: NextRequest) {
 
     const { body, status } = await session.authorize();
     return new Response(body, { status });
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
-    return new Response(JSON.stringify({ error: err.message }), {
+    return new Response(JSON.stringify({ error: err }), {
       status: 500,
     });
   }

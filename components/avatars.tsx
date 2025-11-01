@@ -39,9 +39,9 @@ function AvatarStack() {
   const avatar =
     typeof window !== "undefined" ? localStorage.getItem("avatar") : null;
 
-  if (self && username) {
+  if (self && username && avatar) {
     self.info.name = username;
-    if (avatar) self.info.avatar = avatar;
+    self.info.avatar = avatar;
   }
 
   return (
