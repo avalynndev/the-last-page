@@ -32,7 +32,7 @@ const indieFlower = Indie_Flower({
 });
 
 const initialConfig = liveblocksConfig({
-  namespace: "Demo",
+  namespace: "TheLastPage",
   nodes: [
     HorizontalRuleNode,
     CodeNode,
@@ -122,7 +122,7 @@ export function Editor() {
                         }
                         placeholder={
                           <span className="pointer-events-none absolute top-7 left-8 mt-px text-sm text-muted-foreground w-full h-full italic leading-snug">
-                            Start typing?
+                            Start typing...
                           </span>
                         }
                         ErrorBoundary={LexicalErrorBoundary}

@@ -102,9 +102,8 @@ export function AuthWrapper({ children }: { children: React.ReactNode }) {
         {randomAvatars.map((a) => (
           <div
             key={a}
-            className={`cursor-pointer rounded-full border-2 transition-transform ${
-              avatar === a ? "border-primary scale-105" : "border-transparent"
-            }`}
+            className={`cursor-pointer rounded-full border-2 transition-transform ${avatar === a ? "border-primary scale-105" : "border-transparent"
+              }`}
             onClick={() => setAvatar(a)}
           >
             <Avatar className="w-24 h-24">

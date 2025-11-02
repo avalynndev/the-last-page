@@ -52,7 +52,7 @@ export async function getRoomTitle(roomId: string) {
     const storage = await liveblocks.getStorageDocument(roomId, "json");
     return storage.title;
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return "";
   }
 }
